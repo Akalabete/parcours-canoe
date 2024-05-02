@@ -1,13 +1,85 @@
 
 var pastilles = document.querySelectorAll('.pastille');
+var intervalId = null;
 var imageArrays = {
-    'pastille1': ['image1.jpg', 'image2.jpg', 'image3.jpg'],
-    'pastille2': ['image4.jpg', 'image5.jpg', 'image6.jpg'],
-    'pastille3': ['image7.jpg', 'image8.jpg', 'image9.jpg'],
-    'pastille4': ['image10.jpg', 'image11.jpg', 'image12.jpg'],
-    'pastille5': ['image13.jpg', 'image14.jpg', 'image15.jpg'],
-    'pastille6': ['image16.jpg', 'image17.jpg', 'image18.jpg'],
-    'pastille7': ['image19.jpg', 'image20.jpg', 'image21.jpg'],
+    'pastille1': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 1",
+        description: "description du parcours 1",
+        tempsDeParcours: "temps de parcours 1",
+        prix: "10 €"
+    },
+    'pastille2': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 2",
+        description: "description du parcours 2",
+        tempsDeParcours: "temps de parcours 2",
+        prix: "10 €"
+    },
+    'pastille3': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 3",
+        description: "description du parcours 3",
+        tempsDeParcours: "temps de parcours 3",
+        prix: "10 €"
+    },
+    'pastille4': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 4",
+        description: "description du parcours 4",
+        tempsDeParcours: "temps de parcours 4",
+        prix: "10 €"
+    },
+    'pastille5': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 5",
+        description: "description du parcours 5",
+        tempsDeParcours: "temps de parcours 5",
+        prix: "10 €"
+    },
+    'pastille6': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 6",
+        description: "description du parcours 6",
+        tempsDeParcours: "temps de parcours 6",
+        prix: "10 €"
+    },
+    'pastille7': {
+        images: [
+            {src: 'image1.jpg', alt: 'Description de l\'image 1'},
+            {src: 'image2.jpg', alt: 'Description de l\'image 2'},
+            {src: 'image3.jpg', alt: 'Description de l\'image 3'}
+        ],
+        titre: "titre du parcours 7",
+        description: "description du parcours 7",
+        tempsDeParcours: "temps de parcours 7",
+        prix: "10 €"
+    },
+
 };
 for (var i = 0; i < pastilles.length; i++) {
     pastilles[i].addEventListener('mouseover', function() {
@@ -27,24 +99,36 @@ for (var i = 0; i < pastilles.length; i++) {
 function showSlider(pastilleId) {
     var slider = document.getElementsByClassName('slider')[0];
 
-    var images = imageArrays[pastilleId];
+    var pastille = imageArrays[pastilleId];
+    var images = pastille.images;
 
     slider.innerHTML = '';
 
     for (var i = 0; i < images.length; i++) {
         var img = document.createElement('img');
-        img.src = images[i];
+        img.src = images[i].src;
+        img.alt = images[i].alt;
         img.style.display = i === 0 ? 'block' : 'none'; 
         slider.appendChild(img);
     }
-
     slider.style.display = 'block';
-
+    
+    
+    var parcourstitle = document.getElementsByClassName('parcours-title')[0];
+    parcourstitle.innerHTML = pastille.titre;
+    var parcoursdescription = document.getElementsByClassName('parcours-description')[0];
+    parcoursdescription.innerHTML = pastille.description;
+    var parcourstemp = document.getElementsByClassName('parcours-temps')[0];
+    parcourstemp.innerHTML = pastille.tempsDeParcours;
+    var parcoursprix = document.getElementsByClassName('parcours-prix')[0];
+    parcoursprix.innerHTML = pastille.prix;
     
     var currentIndex = 0;
+    
     clearInterval(intervalId);
-    setInterval(function() {
+    intervalId = setInterval(function() { 
         slider.children[currentIndex].style.display = 'none';
+        console.log("new index")
         currentIndex = (currentIndex + 1) % slider.children.length;
         slider.children[currentIndex].style.display = 'block';
     }, 2000); 
@@ -52,6 +136,15 @@ function showSlider(pastilleId) {
 
 function hideSlider() {
     var slider = document.getElementsByClassName('slider')[0];
+    var parcourstitle = document.getElementsByClassName('parcours-title')[0];
+    var parcoursdescription = document.getElementsByClassName('parcours-description')[0];
+    var parcourstemp = document.getElementsByClassName('parcours-temps')[0];
+    var parcoursprix = document.getElementsByClassName('parcours-prix')[0];
+
+    parcourstitle.innerHTML = '';
+    parcoursdescription.innerHTML = '';
+    parcourstemp.innerHTML = '';
+    parcoursprix.innerHTML = '';
 
     slider.style.display = 'none';
     clearInterval(slider.intervalId);
