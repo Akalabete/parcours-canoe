@@ -34,14 +34,24 @@ function showSlider(pastilleId) {
     for (var i = 0; i < images.length; i++) {
         var img = document.createElement('img');
         img.src = images[i];
+        img.style.display = i === 0 ? 'block' : 'none'; // Affichez la première image et cachez les autres
         slider.appendChild(img);
     }
 
     slider.style.display = 'block';
+
+    
+    var currentIndex = 0;
+    setInterval(function() {
+        slider.children[currentIndex].style.display = 'none';
+        currentIndex = (currentIndex + 1) % slider.children.length;
+        slider.children[currentIndex].style.display = 'block';
+    }, 2000); 
 }
 
 function hideSlider() {
     var slider = document.getElementsByClassName('slider')[0];
 
     slider.style.display = 'none';
+    clearInterval(slider.intervalId);
 }
