@@ -1,0 +1,79 @@
+body {
+    background: linear-gradient(to left, #006d77, #83c5be);
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.imagewrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    width: 50%;
+    border: 1px red solid;
+}
+
+.pastille {
+    position: absolute;
+    width: 4%; 
+    height: 4%;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#pastille1 {
+    bottom: 42%; 
+    left: 30%; 
+}
+
+#pastille2 {
+    bottom: 48%;
+    left: 36%;
+}
+
+#pastille3 {
+    bottom: 46%;
+    left: 43%; 
+}
+
+#pastille4 {
+    bottom: 43%;
+    left: 50%;
+}
+
+#pastille5 {
+    top: 42%;
+    right: 44%;
+}
+
+#pastille6 {
+    top: 34%;
+    right: 39%;
+}
+
+#pastille7 {
+    top: 29%;
+    right: 27%;
+}
+
+.parcours {
+    width: 100%;
+    border: solid 1px blue;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    gap: 10px;
+}
+
+.sliderwrapper {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: solid 1px green;
+}
