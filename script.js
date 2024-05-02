@@ -34,7 +34,7 @@ function showSlider(pastilleId) {
     for (var i = 0; i < images.length; i++) {
         var img = document.createElement('img');
         img.src = images[i];
-        img.style.display = i === 0 ? 'block' : 'none'; // Affichez la première image et cachez les autres
+        img.style.display = i === 0 ? 'block' : 'none'; 
         slider.appendChild(img);
     }
 
@@ -42,6 +42,7 @@ function showSlider(pastilleId) {
 
     
     var currentIndex = 0;
+    clearInterval(intervalId);
     setInterval(function() {
         slider.children[currentIndex].style.display = 'none';
         currentIndex = (currentIndex + 1) % slider.children.length;
