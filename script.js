@@ -1,6 +1,14 @@
 
 var pastilles = document.querySelectorAll('.pastille');
 var intervalId = null;
+var slider = document.getElementsByClassName('slider')[0];
+var parcourInfos = document.getElementsByClassName('parcours-infos')[0];
+var parcourstitle = document.getElementsByClassName('parcours-title')[0];
+var parcoursdescription = document.getElementsByClassName('parcours-description')[0];
+var parcourstemp = document.getElementsByClassName('parcours-temps')[0];
+var parcoursprix = document.getElementsByClassName('parcours-prix')[0];
+slider.style.display = 'none';
+parcourInfos.style.display = 'none';
 var imageArrays = {
     'pastille1': {
         images: [
@@ -97,7 +105,7 @@ for (var i = 0; i < pastilles.length; i++) {
 }
 
 function showSlider(pastilleId) {
-    var slider = document.getElementsByClassName('slider')[0];
+    
 
     var pastille = imageArrays[pastilleId];
     var images = pastille.images;
@@ -113,14 +121,10 @@ function showSlider(pastilleId) {
     }
     slider.style.display = 'block';
     
-    
-    var parcourstitle = document.getElementsByClassName('parcours-title')[0];
+    parcourInfos.style.display = 'block';
     parcourstitle.innerHTML = pastille.titre;
-    var parcoursdescription = document.getElementsByClassName('parcours-description')[0];
     parcoursdescription.innerHTML = pastille.description;
-    var parcourstemp = document.getElementsByClassName('parcours-temps')[0];
     parcourstemp.innerHTML = pastille.tempsDeParcours;
-    var parcoursprix = document.getElementsByClassName('parcours-prix')[0];
     parcoursprix.innerHTML = pastille.prix;
     
     var currentIndex = 0;
@@ -135,17 +139,13 @@ function showSlider(pastilleId) {
 }
 
 function hideSlider() {
-    var slider = document.getElementsByClassName('slider')[0];
-    var parcourstitle = document.getElementsByClassName('parcours-title')[0];
-    var parcoursdescription = document.getElementsByClassName('parcours-description')[0];
-    var parcourstemp = document.getElementsByClassName('parcours-temps')[0];
-    var parcoursprix = document.getElementsByClassName('parcours-prix')[0];
-
     parcourstitle.innerHTML = '';
     parcoursdescription.innerHTML = '';
     parcourstemp.innerHTML = '';
     parcoursprix.innerHTML = '';
 
+
     slider.style.display = 'none';
+    parcourInfos.style.display = 'none';
     clearInterval(slider.intervalId);
 }

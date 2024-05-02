@@ -77,8 +77,24 @@ body {
 .sliderwrapper {
     width: 50%;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     border: solid 1px green;
+}
+.slider {
+    min-width: 200px;
+    max-width: 500px;
+    height: 200px;
+    max-height: 500px;
+    border: 1px solid purple;
+}
+.parcours-infos h3,.parcours-infos p{ 
+    text-align: center;
+}
+.parcours-infos{
+    padding: 10px;
+    border: solid 1px red;
 }
