@@ -26,43 +26,53 @@ body {
     width: 4%; 
     height: 4%;
     border-radius: 50%;
-    background-color: transparent;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
 #pastille1 {
     bottom: 42%; 
-    left: 30%; 
+    left: 30%;
+    background-color: purple;
 }
 
 #pastille2 {
     bottom: 48%;
     left: 36%;
+    background-color: orange
 }
 
 #pastille3 {
     bottom: 46%;
-    left: 43%; 
+    left: 43%;
+    background-color: green;
 }
 
 #pastille4 {
     bottom: 43%;
     left: 50%;
+    background-color: teal;
 }
 
 #pastille5 {
     top: 42%;
     right: 44%;
+    background-color: blue;
 }
 
 #pastille6 {
     top: 34%;
     right: 39%;
+    background-color: red;
 }
 
 #pastille7 {
     top: 29%;
     right: 27%;
+    background-color: black;
 }
 
 .parcours {
