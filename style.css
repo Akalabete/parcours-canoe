@@ -1,16 +1,20 @@
 body {
     background: linear-gradient(to left, #006d77, #83c5be);
-    height: 100vh;
+    height: 98vh;
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
     box-sizing: border-box;
     width: 100%;
+    min-width: 320px;
     overflow-x: hidden;
 }
 *, *::before, *::after {
     box-sizing: border-box;
 }
+
+
+/* raw css 
 .imagewrapper {
     position: relative;
     display: flex;
@@ -19,6 +23,9 @@ body {
     min-width: 200px;
     width: 50%;
     border: 1px red solid;
+}
+.imagewrapper img{
+    min-width: 200px;
 }
 
 .pastille {
@@ -107,4 +114,324 @@ body {
 .parcours-infos{
     padding: 10px;
     border: solid 1px red;
+}
+
+.recapwrapper {
+    display: flex;
+    flex-direction: column;
+}
+.recap-inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+.recap-inner-container p, .recapwrapper p{
+    margin: 0;
+}
+#recapwrapper1 {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+#recapwrapper2 {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+}
+#recapwrapper3 {
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+#recapwrapper4 {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+}
+#recapwrapper5 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+#recapwrapper6 {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+}
+#recapwrapper7 {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+.recap {
+    height: 2vh;
+    width: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+}
+.recap-inner-container p {
+    color: yellow;
+}
+.recap-desc {
+    color: white;
+}
+#recap1 {
+    background-color: purple;
+}
+#recap2 {
+    background-color: orange;
+}
+#recap3 {
+    background-color: green;
+}
+#recap4 {
+    background-color: teal;
+}
+#recap5 {
+    background-color: blue;
+}
+#recap6 {
+    background-color: red;
+}
+#recap7 {
+    background-color: black;
+}
+.recapinfowrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+*/
+
+/* définition des palliers de responisivité */
+header {
+
+    height: 10vh;;
+    width: 100%;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    margin-bottom: 12vh;
+
+}
+
+.header-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+    position: relative;
+}
+.logo {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav {
+    display: none;
+    
+}
+.burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    width: 8vh;
+    background-color: teal;
+    border-radius: 15px;
+    padding: 5px;
+    cursor: pointer;
+    transition: width 0.5s;
+    position: absolute;
+    top : 1vh;
+    right: 2vh;
+}
+.burger >ul {
+    display: none;
+}
+.burger:hover {
+    width: max-content;
+    height: max-content;
+    padding: 0;
+}
+.burger:hover > .line {
+    display: none;
+}
+.burger:hover > ul {
+    display: block;
+    margin: 0;
+    padding: 5px;
+}
+.burger ul a {
+    text-decoration: none;
+    color: yellow;
+    font-size: 0.8em;
+}
+.burger ul a:hover {
+    text-decoration: underline wavy 2px yellow;
+}
+.burger ul {
+    list-style: none;
+}
+.line {
+    width: 100%;
+    height: 3px;
+    border-radius: 50%;
+    background-color: yellow;
+    
+}
+
+/* main designing */
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border: solid 4px yellow;
+    border-radius: 15px;
+    margin-top: 12vh;
+    margin: 12vh 2vw 2vh 2vw;
+    color:black; 
+    text-align: center;
+}
+.main-wrapper p {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.5rem;
+}
+h1, h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: purple;
+    text-decoration : underline wavy 2px purple;
+}
+.main-image {
+    width: 90%;
+    height: 20vh;
+    border: solid 1px red;
+}
+.parcours {
+    border: solid 4px yellow;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    margin: 2vh 2vw;
+    border-radius: 15px;
+}
+h2 {
+    text-align: center;
+}
+.recapinfowrapper {
+    display: flex;
+    flex-direction: column;
+}
+.recapwrapper {
+    padding: 1vh;
+    width: 80%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #5a3511 25%, #815312 25%, #53350a 50%, #815312 50%, #5a3511 75%, #815312 75%);
+    background-size: 20px 100%;
+    border-radius: 50% / 50%;
+    margin: 1vh auto;
+    cursor: pointer;
+}
+#recapwrapper1 {
+    border: solid 3px purple;
+}
+.recap{
+    height: 3vh;
+    width: 3vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#recap1 {
+    background-color: purple;
+}
+.recap-inner-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.recap-inner-container p {
+    color: white;
+    margin: 0;
+    font-size: 0.8rem;
+}
+.recap-inner-container h3{
+    color: yellow;
+    margin: 0;
+    font-size: 0.8rem;
+
+}
+.recap-desc {
+    margin: 0;
+    text-align: center;
+    color: white;
+    
+}
+.price {
+    font-size: 1.0rem;
+    font-weight: bold;
+    background-color: yellow;
+    border-radius: 15px;
+    padding: 5px;
+}
+@media screen and (min-width: 568px) {
+    .nav {
+        display: flex;
+        
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        width: 100%;
+        gap: 20px;
+        font-size: 1.0rem;
+        list-style: none;
+    }
+    .nav ul a {
+        text-decoration: none;
+        color: teal;
+    }
+    .nav ul a:hover {
+        text-decoration: underline wavy 2px teal;
+    }
+    
+    .burger{
+        display: none;
+    }
 }
